@@ -10,12 +10,14 @@
                 <th>Nombres</th> 
                 <th>Apellidos</th> 
                 <th>Codigo</th> 
+                
                 <th>Email</th> 
                 <th>Opciones</th> 
             </tr> 
         </thead> 
         <tbody> 
             @for (item of lstEstudiantes; track index; let index = $index)
+
              { 
             <tr> 
                 <td>{{item.idEstudiante}}</td> 
