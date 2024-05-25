@@ -1,33 +1,32 @@
 import { Component, inject } from '@angular/core'; 
-import { EstudiantesService } from '../services/estudiantes.service'; 
+import { ProfesoresService } from '../services/profesores.service'; 
 import { CommonModule } from '@angular/common'; 
-import { Estudiante } from '../Interfaces/estudiante.interface';
+import { Profesores } from '../Interfaces/Profesores.interface'; 
  
 @Component({ 
-  selector: 'app-estudiantes', 
+  selector: 'app-profesores', 
   standalone: true, 
   imports: [CommonModule], 
-  templateUrl: './estudiantes.component.html', 
-  styleUrl: './estudiantes.component.scss' 
+  templateUrl: './profesores.component.html', 
+  styleUrl: './profesores.component.scss' 
 }) 
-export class EstudiantesComponent { 
+export class ProfesoresComponent { 
  
   // Haciendo inyeccion de dependencia 
-  private readonly estudiantesService = inject(EstudiantesService); 
-  public lstEstudiantes: Estudiante[]; 
+  private readonly profesoresService = inject(ProfesoresService); 
+  public lstProfesores: Profesores[]; 
  
   constructor(){ 
-    this.lstEstudiantes = []; 
+    this.lstProfesores = []; 
     this.getAllStudents(); 
   } 
  
   getAllStudents(){ 
-    this.estudiantesService.obtenerEstudiantes().subscribe({ 
+    this.profesoresService.obtenerProfesores().subscribe({ 
       // Se evalua que la respuesta del endpoint sea exitosa 
       next: (temp) => { 
         // Se asigna la lista al arreglo anteriormente descrito 
-        this.lstEstudiantes = temp; 
-        console.log(temp)
+        this.lstProfesores = temp; 
       }, 
       // En caso de error 
       error: (err) => { 

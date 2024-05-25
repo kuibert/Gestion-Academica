@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="d-flex justify-content-between mt-4">
+        <h4>Mantenimiento Carreras</h4>
+        <button class="btn btn-success">Agregar</button>
+    </div>
+    <table class="table table-bordered mt-4">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Código</th>
+                <th>Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (item of ltsCarreras; track index; let index = $index)
+            {
+                <tr>
+                    <td>{{item.idCarrera}}</td>
+                    <td>{{item.nombreCarrera}}</td>
+                    <td>{{item.codigoCarrera}}</td>
+                    <td>
+                        <button class="btn btn-primary">Actualizar</button>
+                        <button class="btn btn-danger ml-2">Eliminar</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

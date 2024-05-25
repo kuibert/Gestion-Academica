@@ -1,5 +1,5 @@
-export interface Estudiante{ 
+export interface Carrera{ 
     idCarrera: number; 
-    nombresCarrera: string; 
+    nombreCarrera: string; 
     codigoCarrera: string; 
     } 

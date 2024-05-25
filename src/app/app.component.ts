@@ -2,10 +2,10 @@ import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { EstudiantesService } from './services/estudiantes.service';
 import { CarrerasService } from './services/carreras.service'; // Importa el servicio de carreras
-import { CommonModule } from '@angular/common';
 import { GruposService } from './services/grupos.service';
 import { MateriasService } from './services/materias.service';
 import { ProfesoresService } from './services/profesores.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
