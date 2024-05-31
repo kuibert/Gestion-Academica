@@ -1,7 +1,8 @@
 <div class="container"> 
     <div class="d-flex justify-content-between mt-4"> 
         <h4>Mantenimiento Estudiantes</h4> 
-        <button class="btn btn-success">Agregar</button> 
+        <button class="btn btn-success" (click) = 
+"navigateToForm()">Agregar</button> 
     </div> 
     <table class="table table-bordered mt-4"> 
         <thead> 
@@ -15,9 +16,7 @@
             </tr> 
         </thead> 
         <tbody> 
-            @for (item of lstEstudiantes; track index; let index = $index)
-
-             { 
+            @for (item of lstEstudiantes; track index; let index = $index) { 
             <tr> 
                 <td>{{item.idEstudiante}}</td> 
                 <td>{{item.nombreEstudiante}}</td> 
@@ -27,13 +26,16 @@
                 <td> 
                     <!-- Podemos enviar valores a metodos en el .ts de esta 
 forma--> 
-                    <button class="btn btn-primary">Actualizar</button> 
+                    <button class="btn btn-primary" 
+(click)="updateEstudiante(item.idEstudiante)">Actualizar</button> 
                     <!-- Esta es otra forma con la que podemos enviar valores a 
 metodos en el .ts--> 
-                    <button class="btn btn-danger ml-2">Eliminar</button>      
+<button class="btn btn-danger ml-2" 
+(click)="deleteEstudiante($event)"  
+                        value="{{item.idEstudiante}}">Eliminar</button>      
                 </td> 
             </tr> 
-        }  
+        } 
         </tbody> 
     </table> 
-</div>
+</div> 
